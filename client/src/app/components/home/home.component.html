@@ -1,0 +1,75 @@
+<body>
+    <section class="sideMenu">
+        <div class="logoPart">
+            <img class="logo" src="/assets/images/logo.png" alt="image">
+            <h3 class="planner">Planner</h3>
+        </div>
+        <div class="menu">
+            <div class="div" (click)="tasksClick()">
+                <mat-icon class="icon">subject</mat-icon>
+                <h3>Tasks</h3>
+            </div>
+            <div class="div" (click)="calendarClick()">
+                <mat-icon class="icon">event_available</mat-icon>
+                <h3>Calendar</h3>
+            </div>
+            <div class="div" (click)="personalClick()">
+                <mat-icon class="icon">person</mat-icon>
+                <h3>Mine</h3>
+            </div>
+            <div class="div" (click)="settingsClick()">
+                <mat-icon class="icon">settings</mat-icon>
+                <h3>Settings</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="mainPart">
+        <section class="note">
+            <h1>Note for Today</h1>
+            <textarea class="comment" placeholder="Today I'm gonna..."></textarea>
+            <div class="datePicker">
+                <button mat-raised-button class="saveButton" color="accent">save</button>
+                <input class="dateInput" formControlName="dateCtrl" [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle class="dateIcon" matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+        </section>
+
+        <section class="tasks">
+            <div class="chipDiv" cdkScrollable>
+                <mat-chip-listbox class="chips" *ngFor="let cat of category">
+                    <mat-chip class="chip">{{cat}}</mat-chip>
+                </mat-chip-listbox>
+                <button class="menu" mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      Add category
+                    </button>
+                    <button mat-menu-item>
+                      Delete category
+                    </button>
+                </mat-menu>
+            </div>
+            <div class="taskDiv" *ngIf="tasks" cdkScrollable>
+                <div class="list" *ngFor="let task of tasks; let i = index">
+                    <mat-checkbox (click)="deleteTask(i)">
+                        <p class="checkbox">{{task.title}}</p>
+                    </mat-checkbox>
+                    <button (click)="deleteTask(i)" class="delete" mat-icon-button matTooltip="Primary">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                    <div class="bottom">
+                        <h5 class="catLabel">{{task.category}}</h5>
+                        <h5 class="dateLabel">{{task.date}}</h5>
+                    </div>
+                </div>
+            </div>
+            <button mat-fab class="addTaskBtn" (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </section>
+    </section>
+</body>

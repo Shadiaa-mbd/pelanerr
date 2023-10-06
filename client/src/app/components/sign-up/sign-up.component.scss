@@ -1,0 +1,165 @@
+$iconColor: #7c8aa1;
+$buttoncolor: #474cb3;
+
+body{
+    display: flex;
+    flex-direction: row;
+    
+    .leftSide{
+        flex: 1;
+
+        // background: #4e54c8,;
+        // background: -webkit-linear-gradient(to bottom right, #4e54c8, #3a7bd5, #3a6073);
+        // background: linear-gradient(to bottom right, #4e54c8,  #3a7bd5, #3a6073);
+
+        background: #4e54c8;
+        background: -webkit-linear-gradient(to bottom right, #4e54c8, #8f94fb);
+        background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+        
+        .logoPart{
+            display: flex;
+            flex-direction: row;
+            justify-self: left;
+
+            .logo{
+                justify-self: left;
+                width: 2.2rem;
+                padding-bottom: 2rem;
+                color: white;
+                padding-left: 0.5rem;
+                padding-top: 0.5rem;
+            }
+
+            .planner{
+                color: white;
+                padding-top: 0.5rem;
+                font-size: 1.2rem;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-weight: 1000;
+            }
+        }
+
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 3.5rem;
+
+            .welcome{
+                font-size: 2.4rem;
+                font-weight: bold;
+                color: white;
+            }
+
+            .welcomeTwo{
+                color: white;
+                font-size: 1rem;
+            }
+        }
+
+        .sentences{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding-top: 8rem;
+
+            .circle{
+                font-size: 1rem;
+                color: white;
+                padding-top: 0.35rem;
+            }
+
+            .sentence{
+                padding-left: 4.5rem;
+                display: flex;
+                color: white;
+            }
+        }
+    }
+
+    .formSection{
+        flex: 1.5;
+        box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
+        .signInPart{
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            padding-right: 1rem;
+            padding-top: 1rem;
+    
+            .signInSentence{
+                font-size: 0.80rem;
+                padding-top: 0.35rem;
+                padding-right: 1rem;
+                color: $iconColor;
+            }
+    
+            .signInButton{
+                height: 2rem;
+                background-color: $buttoncolor;
+            }
+        }
+
+        .mainSentence{
+            padding-top: 4.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .sentence{
+                font-size: 2rem;
+                font-weight: 450;
+                color: #406a96;
+            }
+        }
+
+        .formGroup{
+            padding-top: 2.5rem;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+
+            .nameInput{
+                padding: 0.5rem;
+                min-width: 25rem;
+
+                .nameIcon{
+                    color: $iconColor;
+                }
+            }
+
+            .emailInput{
+                padding: 0.5rem;
+                min-width: 25rem;
+
+                .emailIcon{
+                    color: $iconColor;
+                }
+            }
+
+            .passwordInput{
+                padding: 0.5rem;
+                min-width: 25rem;
+
+                .passwordIcon{
+                    color: $iconColor;
+                }
+
+                .visibilityButton{
+                    background-color: white;
+                    color: $iconColor;
+                    border: none;
+                }
+            }
+
+            .signUpButton{
+                margin-top: 1rem;
+                min-width: 15rem;
+                background-color: $buttoncolor;
+            }
+        }
+    }
+}

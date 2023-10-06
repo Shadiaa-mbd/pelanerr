@@ -1,0 +1,20 @@
+<body>
+    <form class="formGroup" [formGroup]="taskFg">
+        <div mat-dialog-content>
+            <input matInput class="taskInput" formControlName="taskCtrl" type="text" placeholder="Add your task">
+            <button (click)="addTask()" mat-fab class="taskBtn">
+                <mat-icon>send</mat-icon>
+            </button>
+            <div class="div">
+                <div class="menu">
+                    <mat-select formControlName="categoryCtrl" placeholder="category">
+                        <mat-option *ngFor="let cat of category" [value]="cat">{{cat}}</mat-option>
+                    </mat-select>
+                </div>     
+                <input class="date" formControlName="dateCtrl" [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle class="dateIcon" matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker class="icon" #picker></mat-datepicker>
+            </div>
+        </div>
+    </form>
+</body>
